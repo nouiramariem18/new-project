@@ -18,8 +18,8 @@ function Filter({ titleFilter, setTitleFilter, ratingFilter, setRatingFilter }) 
             type="number"
             min={0}
             placeholder="Note minimale"
-            value={ratingFilter}
-            onChange={(e) => setRatingFilter(Number(e.target.value))}
+            value={ratingFilter === 0 ? '' : ratingFilter}
+            onChange={(e) => setRatingFilter(e.target.value === '' ? 0 : Number(e.target.value))}
           />
           <div>Note minimale actuelle : {ratingFilter}</div>
         </Col>
